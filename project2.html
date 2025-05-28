@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>C & V</title>
+    <style>
+        body {
+            background-color: rgb(243, 219, 174);
+        }
+        header {
+            background-color: orange;
+            margin: 0px;
+            padding: 10px;
+            text-align: center;
+            font-size: 30px;
+        }
+        
+        main {
+            display: grid;
+            grid-template-areas: 
+            "a b"
+            "c d";
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 5px;
+            justify-content: space-between;
+        }
+        main a {
+            background-color: brown;
+            color: white;
+            border-radius: 7px;
+            padding: 7px;
+            text-decoration: none;
+            justify-content: left;
+        }
+        main a:hover {
+            background-color: orange;
+            color: white;
+        }
+        div {
+            margin-bottom: 30px;
+            width: 400px;
+        }
+        div:hover {
+            background-color: rgb(87, 3, 3);
+        }
+        .a {
+            grid-area: a;
+            background-color: black;
+            color: orange;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .b {
+            grid-area: b;
+            background-color: black;
+            color: orange;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .c {
+            grid-area: c;
+            background-color: black;
+            color: orange;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .d {
+            grid-area: d;
+            background-color: black;
+            color: orange;
+            text-align: center;
+            border-radius: 10px;
+        }
+        footer {
+            justify-content: center;
+            text-align: center;
+            background-color: orange;
+            padding: 10px;
+        }
+        img {
+            width: 300px;
+            height: 250px;
+        }
+        footer a{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C & V</h1>
+        <h2>Food and Grills</h2>
+    </header><hr>
+    <main>
+        <div class="a">
+            <P>
+                <img src="jollof rice 1.webp" alt="jollof rice">
+            </P><br>
+            <h3>Jollof rice</h3>
+            <p>Our jollof rice is a vibrant, slow-cooked blend of long-grain rice
+                 simmered in a rich tomato-pepper sauce infused with onions, aromatic
+                  spices, and herbs—a signature Nigerian classic that pairs 
+                perfectly with fried plantains, grilled meats.</p><br>
+            <p>Price: ₦7000</p>
+            <p><a href="#">Shop now</a></p>
+        </div>
+        <div class="b">
+            <P>
+                <img src="grilled Chicken 1.jpg" alt="grilled chicken">
+            </P><br>
+            <h3>Grilled Chicken</h3>
+            <p>Grilled chicken at our restaurant is tender, charcoal-cooked
+                 chicken marinated in a blend of Nigerian spices, peppers,
+                  and herbs, offering a smoky flavor with juicy meat that pairs
+                 perfectly with jollof rice, fried plantains, or fresh salads.</p><br>
+            <p>Price: ₦7000</p>
+            <p><a href="#">Shop now</a></p>
+        </div>
+        <div class="c">
+            <p>
+                <img src="eba_with_egusi_soup 1.jpg" alt="eba_with_egusi_soup">
+            </p><br>
+            <h3>Eba with Egusi Soup</h3>
+            <p>Our eba is a smooth, hearty staple made from cassava, perfectly
+                 paired with rich egusi soup featuring ground melon seeds, fresh 
+                 leafy vegetables, and your choice of protein or fish, slow-cooked in a flavorful
+                  blend of spices for a truly authentic Nigerian dining experience.</p><br>
+            <p>Price: ₦7000</p>
+            <p><a href="#">Shop now</a></p>
+        </div>
+        <div class="d">
+            <p>
+                <img src="yam and sauce 1.jpg" alt="yam and sauce">
+            </p><br>
+            <h3>Yam and Egg Sauce</h3>
+            <p>Our yam is boiled to perfection—soft, fluffy, and naturally sweet—served 
+                with a savory egg sauce made from fresh tomatoes, peppers, onions, 
+                and aromatic spices, creating a hearty Nigerian breakfast or lunch 
+                that pairs wonderfully with fried plantains or steamed vegetables.</p><br>
+            <p>Price: ₦7000</p>
+            <p><a href="#">Shop now</a></p>
+        </div>
+    </main><hr>
+    <footer>
+        <p><p>No 42 Food city, Chima Estate, Lagos.</p>
+                <p>phone: (+234) 80399210 | email: cvfoods@yahoo.co</p>
+                <p>&copy; 2023 C & V Food and Grills. All Right Reserved</p>
+                <p><a href="#privacy">Privacy Policy</a> | <a href="#service">Terms of service</a></p></p>
+    </footer>
+</body>
+</html>
