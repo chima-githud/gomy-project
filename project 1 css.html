@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: rgb(250, 236, 192);
+            padding-left: 8px;
+        }
+        header {
+            position: sticky;
+            top: 0px;
+            display: flex;
+            justify-content: space-between;           
+            padding: 5px;
+            background-color: black;
+            color: white;
+            margin-bottom: 30px;
+            ul {
+                display: inline-block;
+                list-style: none;
+            }
+            #nav, a {
+                color: white;
+                text-decoration: none;
+                width: 220px;
+            }
+            a:hover {
+                width: 180px;
+                color: orangered;
+                background-color: rgb(12, 1, 1);
+            }
+        }
+        h2 {
+            color: black;
+        }
+        h4 {
+            background-color: orange;
+            color: white;
+            text-align: center;
+        }
+        #home {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(hom\ 1.jpg);
+            color: white;
+            text-align: center;
+            background-blend-mode: darken;
+            font-size: 30px;
+            padding-top: 150px;
+            background-size: cover;
+            width: 100%;
+            height: 400px;
+            a {
+                font-size: large;
+                color: white;
+                background-color: orange;
+                padding: 10px;
+                border-radius: 7px;
+                text-decoration: none;
+            }
+            a:hover {
+                background-color: orangered;
+                color: #000;
+            }
+        }
+        .sectionm {
+            box-shadow: rgb(22, 1, 1);
+            background-color: rgb(248, 233, 149);
+            border-radius: 15px;
+            padding: 10px;
+            margin: 10px;
+            padding-bottom: 200px;
+            margin-bottom: 10px;
+        }
+        #contact {
+            input {
+                margin-bottom: 10px;
+            }
+            textarea {
+                width: 250px;
+                height: 70px;
+            }
+            margin-bottom: 10px;
+        }      
+        #menu {
+            
+            box-shadow: rgb(22, 1, 1);
+            background-color: rgb(248, 233, 149);
+            border-radius: 15px;
+            margin-bottom: 5px;
+            #app {
+                display: flex;
+                gap: 10px;
+            }
+            #main {
+                display: flex;
+                gap: 10px;
+            }
+            #dess {
+                display: flex;
+                gap: 10px;
+            }
+            #dri {
+                display: flex;
+                gap: 10px;
+            }
+            margin-bottom: 10px;
+        }
+        #about {
+            display: block;
+            text-align: center;
+            img {
+                margin-right: 8px;
+                width: 350px;
+                height: 300px;
+            }
+            margin-bottom: 10px;
+        }
+        @media (min-width: 600px) {
+            #mark {
+                display: flex;
+        }
+        }
+        footer a {
+                color: black;
+        }
+    </style>
+    <style>
+        div img {
+           width: 200px;
+           height: 300px;
+        }
+        @media (min-width: 550px) {
+            .menu {
+                padding: 10px;
+                display: grid;
+                grid-template-areas:
+                 "a a a"
+                 "b c d"
+                 "e e e"
+                 "f g h"
+                 "i i i"
+                 "j k l"
+                 "m m m"
+                 "n o p";
+                grid-template-columns: 4fr 4fr 4fr;
+                grid-template-rows: 0.5fr 6fr 0.5fr 6fr 0.5fr 6fr 0.5fr 6fr;
+                gap: 5px;
+                                
+            }
+            .a {
+                    grid-area: a;
+                    text-align: center;
+                    background-color: orange;
+                    color: white;
+                    text-align: center;
+            }
+            .b {
+                    grid-area: b;
+                    text-align: center;
+                    background-color: rgb(248, 233, 149);
+            }
+            .c {
+                    grid-area: c;
+                    text-align: center;
+            }
+            .d {
+                    grid-area: d;
+                    text-align: center;
+            }
+            .e {
+                    grid-area: e;
+                    text-align: center;
+                    background-color: orange;
+                    color: white;
+                    text-align: center;
+            }
+            .f {
+                    grid-area: f;
+                    text-align: center;
+            }
+            .g {
+                    grid-area: g;
+                    text-align: center;
+            }
+            .h {
+                    grid-area: h;
+                    text-align: center;
+            }
+            .i {
+                    grid-area: i;
+                    text-align: center;
+                    background-color: orange;
+                    color: white;
+                    text-align: center;
+            }
+            .j {
+                    grid-area: j;
+                    text-align: center;
+                    
+            }
+            .k {
+                    grid-area: k;
+                    text-align: center;
+            }
+            .l {
+                    grid-area: l;
+                    text-align: center;
+            }
+            .m {
+                    grid-area: m;
+                    text-align: center;
+                    background-color: orange;
+                    color: white;
+                    text-align: center;
+            }
+            .n {
+                    grid-area: n;
+                    text-align: center;
+            }
+            .o {
+                    grid-area: o;
+                    text-align: center;
+            }
+            .p {
+                    grid-area: p;
+                    text-align: center;
+            }
+        }
+    </style>
+    <title>C & V FOOD AND GRILLS MENU</title>
+    <body>
+        <header>
+            <div>
+                <h1>C & V FOOD AND GRILLS MENU</h1>
+            </div>
+            <div id="nav" class="bg-warning">
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#about">ABOUT US</a></li>
+                    <li><a href="#contact">CONTACT US</a></li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <section id="home" class="sectionm">
+                <h3 class="fs-1">Experience Culinary Excellence</h3>
+                <p>discover our carefully crafted menu featuring the 
+                    finest ingredient and flavors
+                </p>
+                <a href="#about">see more</a>
+            </section><hr>
+            <section id="menu" class="sectionm">
+                <h2>MENU</h2>
+                <section class="menu">
+                    <div class="a">
+                        <h4>Appetizers</h4>
+                    </div>
+                    <div class="b">
+                        <img src="Samosa 1.jpg" alt="Samosa">
+                            <p>Samosa</p><br>
+                            <p>Price: ₦1500</p>
+                    </div>
+                    <div class="c">
+                       <img src="tacos 1.jpg" alt="tacos">
+                        <p>Tacos</p>
+                        <p>Price: ₦2000</p> 
+                    </div>
+                    <div class="d">
+                        <img src="Pancake 1.jpg" alt="pancakes">
+                        <p>Pancakes</p>
+                        <p>Price: ₦2000</p>
+                    </div>
+                    <div class="e">
+                        <h4>Main courses</h4>
+                    </div>
+                    <div class="f">
+                        <img src="jollof rice 1.webp" alt="jollof rice">
+                         <p>Jollof rice</p><br>
+                        <p>Price: ₦4000</p>
+                    </div>
+                    <div class="g">
+                        <img src="eba_with_egusi_soup 1.jpg" alt="eba with egusi soup">
+                         <p>Eba and Egusi soup</p><br>
+                        <p>Price: ₦4000</p>
+                    </div>
+                    <div class="h">
+                        <img src="grilled Chicken 1.jpg" alt="grilled chicken">
+                        <p>Grilled Chiken</p><br>
+                        <p>Price: ₦4000</p>
+                    </div>
+                    <div class="i">
+                        <h4>Desserts</h4>
+                    </div>
+                    <div class="j">
+                        <img src="strawberry-cake 1.jpg" alt="strawberry-cake">
+                         <p>Strawberry Cake</p><br>
+                        <p>Price: ₦7500</p>
+                    </div>
+                    <div class="k">
+                        <img src="cookies 1.jpg" alt="cookies">
+                        <p>Cookies</p><br>
+                        <p>Price: ₦3000</p>
+                    </div>
+                    <div class="l">
+                        <img src="chocolate cake 1.jpg" alt="chocolate cake">
+                        <p>Chocolate Cake</p><br>
+                        <p>Price: ₦7000</p>
+                    </div>
+                    <div class="m">
+                        <h4>Drinks</h4>
+                    </div>
+                    <div class="n">
+                        <img src="coke 1.png" alt="coca-cola">
+                            <p>Coke</p><br>
+                            <p>Price: ₦700</p>
+                    </div>
+                    <div class="o">
+                        <img src="fanta 1.webp" alt="fanta">
+                            <p>Fanta</p><br>
+                            <p>Price: ₦700</p>
+                    </div>
+                    <div class="p">
+                                                    <img src="sprite 1.jpg" alt="sprite">
+                            <p>Sprite</p><br>
+                            <p>Price: ₦700</p>
+                    </div>
+                </section>
+            </section><hr>
+            <section id="about" class="sectionm">
+                <h2>ABOUT US</h2>
+                <div id="mark">
+                    <div>                   
+                        <img src="resturant 1.jpg" alt="resturant">
+                   </div>
+                  <div>                   
+                        <b>A Tradition of Excellence</b>
+                        <p>Founded in 2018 by Chima, C & V Food and Grills has been
+                         serving exceptional cuisine offering a wide range of delicious
+                         meals. We make it easy to enjoy your favourite dishes 
+                         in a great evirons
+                        </p>
+                        <p>
+                         C & V Food and Grills is your go-to for delicious food and a 
+                         great serenity
+                        </p>
+                    </div>
+                </div>
+            </section><hr>
+            <section id="contact" class="sectionm">
+                <h2>MAKE RESERVATION</h2>
+                <div>
+                    <h3>CONTACT US</h3>
+                    <input type="text" placeholder="your name"><br>
+                    <input type="email" placeholder="your email"><br>
+                    <input type="number" placeholder="phone number"><br>
+                    <input type= "number" placeholder="number of attendees"><br>
+                    <input type="date" placeholder="date of expectation"><br>
+                    <textarea placeholder="your message or special request"></textarea><br>
+                    <button type="submit">Make Reservation</button>
+                </div>
+            </section><hr>
+        </main>
+        <footer class="bg-warning text-center fs-4 m-0">
+            <section>
+                <p>No 42 Food city, Chima Estate, Lagos.</p>
+                <p>phone: (+234) 80399210 | email: cvfoods@yahoo.co</p>
+                <p>&copy; 2023 C & V Food and Grills. All Right Reserved</p>
+                <p><a href="#privacy">Privacy Policy</a> | <a href="#service">Terms of service</a></p>
+            </section>
+        </footer>
+    </body>
+</html>
