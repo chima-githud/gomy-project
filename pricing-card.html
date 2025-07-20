@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Card Component</title>
+    <style>
+        :root {
+            /* CSS Variables for theme consistency */
+            --primary-color: #007bff;
+            --primary-hover: #0056b3;
+            --primary-active: #004085;
+            --success-color: #28a745;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --background-white: #fff;
+            --border-light: #eee;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --border-radius: 8px;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --font-size-sm: 14px;
+            --font-size-md: 16px;
+            --font-size-lg: 18px;
+            --font-size-xl: 22px;
+            --transition-fast: 0.2s ease-in-out;
+        }
+
+        /* Reset and base styles */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: var(--spacing-md);
+            background-color: #f8f9fa;
+            color: var(--text-primary);
+        }
+
+        /* Container for responsive grid layout */
+        .pricing-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+
+        /* Pricing card component */
+        .pricing-card {
+            background-color: var(--background-white);
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px var(--shadow-light);
+            padding: var(--spacing-xl);
+            text-align: center;
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px var(--shadow-medium);
+        }
+
+        /* Title styling */
+        .pricing-card__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin: 0 0 var(--spacing-md) 0;
+            color: var(--text-primary);
+        }
+
+        /* Price styling */
+        .pricing-card__price {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--success-color);
+            margin: 0 0 var(--spacing-lg) 0;
+        }
+
+        /* Features list */
+        .pricing-card__features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 var(--spacing-xl) 0;
+            text-align: left;
+        }
+
+        .pricing-card__feature {
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--border-light);
+            position: relative;
+            padding-left: var(--spacing-lg);
+        }
+
+        .pricing-card__feature:last-child {
+            border-bottom: none;
+        }
+
+        /* Checkmark icon for features */
+        .pricing-card__feature::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        /* Button styling with comprehensive states */
+        .pricing-card__button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md) var(--spacing-xl);
+            font-size: var(--font-size-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Button hover state */
+        .pricing-card__button:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Button active state */
+        .pricing-card__button:active {
+            background-color: var(--primary-active);
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+        }
+
+        /* Button focus state for accessibility */
+        .pricing-card__button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+
+        /* Button disabled state */
+        .pricing-card__button:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Loading state for button */
+        .pricing-card__button--loading {
+            color: transparent;
+        }
+
+        .pricing-card__button--loading::after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 50%;
+            left: 50%;
+            margin-left: -8px;
+            margin-top: -8px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Mobile-first responsive design */
+        @media (max-width: 768px) {
+            .pricing-container {
+                grid-template-columns: 1fr;
+                padding: var(--spacing-sm);
+                gap: var(--spacing-md);
+            }
+
+            .pricing-card {
+                padding: var(--spacing-lg);
+            }
+
+            .pricing-card__title {
+                font-size: var(--font-size-lg);
+            }
+
+            .pricing-card__price {
+                font-size: var(--font-size-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: var(--spacing-sm);
+            }
+
+            .pricing-card {
+                padding: var(--spacing-md);
+            }
+
+            .pricing-card__button {
+                padding: var(--spacing-sm) var(--spacing-md);
+                font-size: var(--font-size-sm);
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .pricing-card {
+                border: 2px solid var(--text-primary);
+            }
+
+            .pricing-card__button {
+                border: 2px solid var(--primary-color);
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .pricing-card,
+            .pricing-card__button {
+                transition: none;
+            }
+
+            .pricing-card:hover {
+                transform: none;
+            }
+
+            .pricing-card__button--loading::after {
+                animation: none;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-primary: #e9ecef;
+                --text-secondary: #adb5bd;
+                --background-white: #343a40;
+                --border-light: #495057;
+                --shadow-light: rgba(0, 0, 0, 0.3);
+                --shadow-medium: rgba(0, 0, 0, 0.4);
+            }
+
+            body {
+                background-color: #212529;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pricing-container">
+        <!-- Basic Plan Card -->
+        <article class="pricing-card" role="article">
+            <h2 class="pricing-card__title">Basic Plan</h2>
+            <p class="pricing-card__price">$9.99 <span aria-label="per month">/month</span></p>
+            
+            <ul class="pricing-card__features" role="list">
+                <li class="pricing-card__feature" role="listitem">1 GB Storage</li>
+                <li class="pricing-card__feature" role="listitem">Basic Support</li>
+                <li class="pricing-card__feature" role="listitem">All Core Features</li>
+            </ul>
+            
+            <button class="pricing-card__button" 
+                    type="button" 
+                    aria-label="Start free trial for Basic Plan">
+                Start Trial
+            </button>
+        </article>
+
+        <!-- Pro Plan Card (Additional example) -->
+        <article class="pricing-card" role="article">
+            <h2 class="pricing-card__title">Pro Plan</h2>
+            <p class="pricing-card__price">$19.99 <span aria-label="per month">/month</span></p>
+            
+            <ul class="pricing-card__features" role="list">
+                <li class="pricing-card__feature" role="listitem">10 GB Storage</li>
+                <li class="pricing-card__feature" role="listitem">Priority Support</li>
+                <li class="pricing-card__feature" role="listitem">Advanced Features</li>
+                <li class="pricing-card__feature" role="listitem">API Access</li>
+            </ul>
+            
+            <button class="pricing-card__button" 
+                    type="button" 
+                    aria-label="Start free trial for Pro Plan">
+                Start Trial
+            </button>
+        </article>
+
+        <!-- Enterprise Plan Card (Additional example) -->
+        <article class="pricing-card" role="article">
+            <h2 class="pricing-card__title">Enterprise</h2>
+            <p class="pricing-card__price">$49.99 <span aria-label="per month">/month</span></p>
+            
+            <ul class="pricing-card__features" role="list">
+                <li class="pricing-card__feature" role="listitem">Unlimited Storage</li>
+                <li class="pricing-card__feature" role="listitem">24/7 Support</li>
+                <li class="pricing-card__feature" role="listitem">Custom Integrations</li>
+                <li class="pricing-card__feature" role="listitem">Dedicated Account Manager</li>
+            </ul>
+            
+            <button class="pricing-card__button" 
+                    type="button" 
+                    aria-label="Start free trial for Enterprise Plan">
+                Start Trial
+            </button>
+        </article>
+    </div>
+
+    <script>
+        // Enhanced button functionality with loading states
+        document.querySelectorAll('.pricing-card__button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Prevent double-clicks
+                if (this.classList.contains('pricing-card__button--loading')) {
+                    return;
+                }
+
+                // Add loading state
+                this.classList.add('pricing-card__button--loading');
+                this.disabled = true;
+
+                // Simulate API call
+                setTimeout(() => {
+                    this.classList.remove('pricing-card__button--loading');
+                    this.disabled = false;
+                    
+                    // You can add your trial signup logic here
+                    console.log('Trial started for:', this.getAttribute('aria-label'));
+                }, 2000);
+            });
+
+            // Keyboard accessibility
+            button.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        // Add ripple effect for better user feedback
+        document.querySelectorAll('.pricing-card__button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    </script>
+
+    <style>
+        /* Ripple effect styles */
+        .pricing-card__button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</body>
+</html>
